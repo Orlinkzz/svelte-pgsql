@@ -2,71 +2,51 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-## Creating a project
+## Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Clone this repository:
 
 ```bash
-npm run dev
+git clone https://github.com/Orlinkzz/svelte-pgsql.git
+cd svelte-pgsql
+npm install
+cp .env.example .env
 
-# or start the server and open the app in a new browser tab
+npm run dev 
+# or start the server and open the app in a new browser tab 
 npm run dev -- --open
 ```
 
-## Building
+## **Creating Migrations and Seeders Using Knex.js**
 
-To create a production version of your app:
+**Knex.js** is a query builder library for Node.js that supports various types of databases, including PostgreSQL, MySQL, and SQLite. Knex allows you to efficiently manage database schema migrations and seeders for initial data.
 
-```bash
-npm run build
-```
+### **Installing Knex.js and Database Driver**
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-### **Membuat Migrasi dan Seeder Menggunakan Knex.js**
-
-**Knex.js** adalah library query builder untuk Node.js yang mendukung berbagai jenis database, termasuk PostgreSQL, MySQL, dan SQLite. Knex memungkinkan Anda mengelola migrasi skema database dan seeder untuk data awal secara efisien.
-
-#### **Instalasi Knex.js dan Driver Database**
-
-Untuk memulai, instal **Knex.js** dan driver database yang sesuai (misalnya, PostgreSQL):
+To get started, install **Knex.js** and the appropriate database driver (for example, PostgreSQL):
 
 ```bash
 npm install knex pg
 ```
 
-Jika Anda menggunakan database lain seperti MySQL, Anda bisa mengganti `pg` dengan driver yang relevan seperti `mysql2`.
+If you are using another database like MySQL, you can replace `pg` with the relevant driver, such as `mysql2`.
 
-#### **Kegunaan Utama Knex:**
+### **Main Uses of Knex:**
 
-1. **Migrasi**: Mengelola perubahan struktur database (misalnya, membuat, mengubah, atau menghapus tabel).
-2. **Seeder**: Mengisi tabel dengan data awal atau data contoh.
-3. **Query Builder**: Menyusun query SQL secara dinamis menggunakan API JavaScript.
+1. **Migrations**: Manage changes to the database structure (e.g., creating, modifying, or deleting tables).
+2. **Seeders**: Populate tables with initial or example data.
+3. **Query Builder**: Dynamically construct SQL queries using a JavaScript API.
 
-Untuk mempermudah penggunaan perintah migrasi dan seeder, Anda dapat menggunakan perintah yang lebih singkat sebagai berikut:
+To simplify using migration and seeder commands, you can use shorter scripts as follows:
 
-- **Membuat migrasi baru**: `npm run migrate:make create_namamigrasi_table`
-- **Menjalankan semua migrasi**: `npm run migrate`
-- **Rollback migrasi terakhir**: `npm run rollback`
-- **Membuat seeder baru**: `npm run seed:make seed_nama`
-- **Menjalankan semua seeder**: `npm run seed`
-- **Menjalankan seeder tertentu**: `npm run seed -- --specific=namaseed.js`
+- **Create a new migration**: `npm run migrate:make create_table_name_migration`
+- **Run all migrations**: `npm run migrate`
+- **Rollback the last migration**: `npm run rollback`
+- **Create a new seeder**: `npm run seed:make seed_name`
+- **Run all seeders**: `npm run seed`
+- **Run a specific seeder**: `npm run seed -- --specific=seed_name.cjs`
 
-Dokumentasi ini memungkinkan Anda mengelola migrasi dan seeder dengan lebih efisien menggunakan skrip di `package.json`, sehingga Anda bisa mempercepat pengembangan dan pengelolaan database.
+This documentation allows you to manage migrations and seeders more efficiently by using scripts in `package.json`, speeding up your development and database management process.
 
-#### **Email dan Password Login**
--	Email dan Pass: `example@test.com` atau `senajhon@gmail.com`
+### **Email and Password for Login**
+- Email and Password: `example@test.com` or `senajhon@gmail.com`
