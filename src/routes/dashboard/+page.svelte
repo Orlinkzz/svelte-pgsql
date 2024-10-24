@@ -10,6 +10,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>Dashboard</title> 
+</svelte:head>
+
 <main class="min-h-screen flex bg-gray-100">
   <!-- Sidebar -->
   <aside class="w-64 bg-blue-600 text-white flex flex-col">
