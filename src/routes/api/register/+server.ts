@@ -14,11 +14,11 @@ async function isEmailTaken(email: string): Promise<boolean> {
   }
 }
 
-async function createUser(email: string, hashedPassword: string): Promise<void> {
+async function createUser(email: string, hashedPassword: string, firstName: string, lastName: string): Promise<void> {
   try {
     await sql`
-      INSERT INTO users (email, password) 
-      VALUES (${email}, ${hashedPassword})
+      INSERT INTO users (email, password, first_name, last_name) 
+      VALUES (${email}, ${hashedPassword}, ${firstName}, ${lastName})
     `;
   } catch (error) {
     console.error('Database error in createUser:', error);
@@ -33,7 +33,7 @@ function isValidEmail(email: string): boolean {
 
 export const POST: RequestHandler = async ({ request }) => {
   try {
-    const { email, password }: { email: string; password: string } = await request.json();
+    const { email, password, firstName, lastName }: { email: string; password: string; firstName: string; lastName: string } = await request.json();
 
     if (!isValidEmail(email)) {
       console.error('Invalid email format:', email);
@@ -53,8 +53,9 @@ export const POST: RequestHandler = async ({ request }) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    await createUser(email, hashedPassword);
+    await createUser(email, hashedPassword, firstName, lastName);
 
+    // Mengembalikan respons JSON sukses
     return new Response(JSON.stringify({ success: true, message: 'User registered successfully' }), {
       status: 201,
       headers: { 'Content-Type': 'application/json' }
