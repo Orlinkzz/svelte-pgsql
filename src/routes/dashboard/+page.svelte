@@ -1,10 +1,6 @@
-<script lang="ts" context="module">
-  export type { load } from './+page.server';
-</script>
-
 <script lang="ts">
-  export let fullName: string;
-  console.log(fullName);
+	import type { PageData } from './$types'
+	export let data: PageData
 
   const handleLogout = async () => {
     await fetch('/api/logout', {
@@ -38,7 +34,7 @@
     <!-- Header -->
     <header class="h-16 bg-white shadow px-4 flex items-center justify-between">
       <h1 class="text-xl font-semibold">Dashboard</h1>
-      <div class="text-gray-600">Welcome, !</div>
+      <div class="text-gray-600">Welcome, {data.fullName}!</div>
     </header>
 
     <!-- Dashboard Content -->
@@ -46,7 +42,7 @@
       <h2 class="text-2xl font-bold mb-6">Overview</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <p>Welcome,  !</p>
+        <p>Welcome, {data.fullName}!</p>
       </div>
     </section>
   </div>
