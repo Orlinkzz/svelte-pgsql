@@ -65,5 +65,11 @@
         Login
       </button>
     </form>
+    <p class="text-center text-gray-700 my-2">
+      Belum memiliki akun? 
+      <a href="/register" class="text-blue-500 underline hover:text-blue-700">
+          Daftar di sini
+      </a>
+    </p>  
   </div>
 </main>
