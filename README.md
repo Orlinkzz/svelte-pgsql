@@ -67,3 +67,6 @@ Untuk mempermudah penggunaan perintah migrasi dan seeder, Anda dapat menggunakan
 - **Menjalankan seeder tertentu**: `npm run seed -- --specific=namaseed.js`
 
 Dokumentasi ini memungkinkan Anda mengelola migrasi dan seeder dengan lebih efisien menggunakan skrip di `package.json`, sehingga Anda bisa mempercepat pengembangan dan pengelolaan database.
+
+#### **Email dan Password Login**
+-	Email dan Pass: `example@test.com` atau `senajhon@gmail.com`
