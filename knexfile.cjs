@@ -2,10 +2,10 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
-      user: 'postgres',
-      password: '',
-      database: 'auth'
+      host: process.env.VITE_DB_HOST,
+      user: process.env.VITE_DB_USERNAME,
+      password: process.env.VITE_DB_PASSWORD,
+      database: process.env.VITE_DB_DATABASE
     },
     migrations: {
       directory: './migrations'
