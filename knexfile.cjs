@@ -8,10 +8,10 @@ module.exports = {
       database: process.env.VITE_DB_DATABASE
     },
     migrations: {
-      directory: './migrations'
+      directory: './database/migrations'
     },
     seeds: {
-      directory: './seeds'
+      directory: './database/seeds'
     }
   }
 };
