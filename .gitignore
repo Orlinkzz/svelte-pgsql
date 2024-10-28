@@ -1,21 +1,12 @@
-node_modules
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
 
-# Output
-.output
-.vercel
-/.svelte-kit
-/build
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Env
-.env
-.env.*
-!.env.example
-!.env.test
-
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
